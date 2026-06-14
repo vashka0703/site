@@ -10,8 +10,6 @@
             --accent-color: #c5a059; 
             --text-color: #2c3e50;
             --light-bg: #f4f7f5;
-            /* Готовый чеченский орнамент картинкой из интернета */
-            --ornament-url: url('https://ibb.co');
         }
 
         * {
@@ -34,12 +32,11 @@
             z-index: 1000;
         }
 
+        /* Надежная золотая линия с легким узором вместо сложного SVG */
         .header-border {
-            height: 16px;
-            background-image: var(--ornament-url);
-            background-repeat: repeat-x;
-            background-size: auto 16px;
-            background-color: var(--primary-color);
+            height: 8px;
+            background: repeating-linear-gradient(90deg, var(--accent-color), var(--accent-color) 10px, #b08d46 10px, #b08d46 20px);
+            background-color: var(--accent-color);
         }
 
         nav {
@@ -114,7 +111,7 @@
             font-size: 1.15rem;
             color: var(--primary-color);
             max-width: 850px;
-            margin: 0 auto;
+            margin: 20px auto 0 auto;
             line-height: 1.7;
             position: relative;
             padding: 0 20px;
@@ -151,24 +148,13 @@
             margin-bottom: 40px;
             border: 1px solid #e2e8f0;
             position: relative;
-        }
-        
-        .about-section::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 16px;
-            background-image: var(--ornament-url);
-            background-repeat: repeat-x;
-            background-size: auto 16px;
-            border-radius: 8px 8px 0 0;
+            border-top: 6px solid var(--accent-color);
         }
 
         .about-section h2 {
             color: var(--primary-color);
             margin-bottom: 15px;
             font-size: 1.6rem;
-            margin-top: 15px;
         }
 
         .grid-menu {
@@ -188,18 +174,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             border: 1px solid #e2e8f0;
-            padding-top: 40px;
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 16px;
-            background-image: var(--ornament-url);
-            background-repeat: repeat-x;
-            background-size: auto 16px;
-            border-radius: 8px 8px 0 0;
+            border-top: 6px solid var(--accent-color);
         }
 
         .card:hover {
@@ -241,11 +216,8 @@
         }
 
         .slot-ornament {
-            height: 16px;
-            background-image: var(--ornament-url);
-            background-repeat: repeat-x;
-            background-size: auto 16px;
-            background-color: var(--primary-color);
+            height: 6px;
+            background-color: var(--accent-color);
         }
 
         .slot-content {
@@ -295,6 +267,7 @@
         <div class="header-border"></div>
     </header>
 
+    <!-- ГЛАВНАЯ СТРАНИЦА -->
     <div id="page-home" class="page active-page">
         <div class="hero">
             <img src="https://userapi.com" alt="Хава Асламбековна Шаипова" class="main-photo">
@@ -308,13 +281,30 @@
 
         <div class="about-section">
             <h2>О себе</h2>
-            <p> </p>
+            <p>Здесь вы можете разместить подробную биографическую справку, информацию о жизненном и профессиональном пути, педагогическом стаже, ключевых целях в преподавании родного языка и общественной работе. Текст легко заменить через встроенный редактор на GitHub в этом блоке.</p>
         </div>
 
         <div class="grid-menu">
             <div class="card" onclick="showPage('prof')">
                 <h3>Профессиональная деятельность</h3>
-                <p>Педагогический путь, методические достижения и опыт преподавания чеченского языка </p>
+                <p>Педагогический путь, методические достижения и опыт преподавания чеченского языка.</p>
             </div>
             <div class="card" onclick="showPage('science')">
                 <h3>Научная деятельность</h3>
+                <p>Исследования, статьи, доклады и научно-методические публикации автора.</p>
+            </div>
+            <div class="card" onclick="showPage('gov')">
+                <h3>Молодежное Правительство ЧР</h3>
+                <p>Проекты министерства, молодежные инициативы и официальные мероприятия.</p>
+            </div>
+            <div class="card" onclick="showPage('poetry')">
+                <h3>Моя поэзия</h3>
+                <p>Творческая страница: авторские стихотворения и литературные работы.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРОФЕССИОНАЛЬНАЯ ДЕЯТЕЛЬНОСТЬ (50 СЛОТОВ) -->
+    <div id="page-prof" class="page">
+        <h1>Профессиональная деятельность</h1>
+        <p class="subtitle">Педагогические достижения, открытые уроки и опыт работы</p>
